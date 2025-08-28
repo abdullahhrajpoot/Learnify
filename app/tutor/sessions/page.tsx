@@ -74,8 +74,9 @@ export default function TutorSessionsPage() {
   }
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-semibold mb-6 text-gray-900">My Students’ Sessions</h1>
+    <div className="min-h-screen ocean-gradient-light">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <h1 className="text-2xl sm:text-3xl font-semibold mb-6 text-gray-900">My Students’ Sessions</h1>
 
       <ul className="space-y-4">
         {sessions.map((session: any) => {
@@ -108,7 +109,7 @@ export default function TutorSessionsPage() {
               key={session.id}
               className="rounded-xl border bg-white p-4 shadow-sm hover:shadow-md transition"
             >
-              <p className="text-lg font-semibold text-gray-900">
+              <p className="text-lg font-semibold text-gray-900 break-words">
                 {session.notes || 'No notes provided'}
               </p>
 
@@ -147,6 +148,7 @@ export default function TutorSessionsPage() {
           )
         })}
       </ul>
+      </div>
     </div>
   )
 }

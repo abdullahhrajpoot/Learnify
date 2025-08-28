@@ -140,10 +140,10 @@ export default function StudentAssignmentsPage() {
         >
           {/* Header */}
           <motion.div variants={itemVariants} className="text-center sm:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-ocean-primary/20 text-ocean-primary text-sm font-medium mb-4">
+            {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-ocean-primary/20 text-ocean-primary text-sm font-medium mb-4">
               <Waves className="w-4 h-4" />
               <span>Student Dashboard</span>
-            </div>
+            </div> */}
             
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
               My Assignments
@@ -257,7 +257,7 @@ export default function StudentAssignmentsPage() {
                           <div className="flex-1">
                             <Link 
                               href={`/student/assignments/${assignment.id}`}
-                              className="text-xl font-bold text-gray-900 hover:text-ocean-primary transition-colors duration-200 group/link"
+                              className="text-xl font-bold text-gray-900 hover:text-ocean-primary transition-colors duration-200 group/link break-words"
                             >
                               <span className="group-hover/link:underline">{assignment.title}</span>
                               <ArrowRight className="w-4 h-4 inline ml-2 opacity-0 group-hover/link:opacity-100 transition-opacity" />
@@ -301,7 +301,7 @@ export default function StudentAssignmentsPage() {
                           </div>
                         </div>
 
-                        <p className="text-gray-700 leading-relaxed">{assignment.description}</p>
+                        <p className="text-gray-700 leading-relaxed break-words">{assignment.description}</p>
                       </div>
 
                       {/* Right Actions */}

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { supabase } from '@/lib/supabaseClient'
 import { useRouter } from 'next/navigation'
-import { Mail, Lock, Loader2, LogIn, ArrowLeft, Waves, Sparkles } from 'lucide-react'
+import { Mail, Lock, Loader2, LogIn, ArrowLeft, Waves, Sparkles, Eye, EyeOff } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
@@ -12,6 +12,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
   const router = useRouter();
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -164,13 +165,21 @@ export default function LoginPage() {
                   <Lock className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
                   <input
                     id="password"
-                    type="password"
+                    type={showPassword ? 'text' : 'password'}
                     placeholder="Enter your password"
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                     required
                     className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-ocean-primary focus:border-ocean-primary transition-all duration-200 bg-white/80 backdrop-blur-sm"
                   />
+                  <button
+                    type="button"
+                    aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    onClick={() => setShowPassword(v => !v)}
+                    className="absolute right-3 top-2.5 text-gray-500 hover:text-gray-700"
+                  >
+                    {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  </button>
                 </div>
               </div>
 

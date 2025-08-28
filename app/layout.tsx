@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="min-h-screen flex flex-col ocean-gradient-light">
+      <body className="min-h-screen flex flex-col ocean-gradient-light overflow-x-hidden">
         <main className="flex-1">{children}</main>
         <Footer />
       </body>

@@ -283,7 +283,7 @@ export default function AdminEditPage() {
             <Edit className="w-8 h-8 text-ocean-primary" />
           </div>
           <div>
-            <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-ocean-primary to-ocean-secondary bg-clip-text text-transparent">
+            <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-cyan-500 to-cyan-500 bg-clip-text text-transparent">
               Edit & Manage
             </h1>
             <p className="text-ocean-secondary/80 text-sm sm:text-base">

@@ -125,8 +125,8 @@ export default function AdminNav() {
             >
               <Shield className="w-5 h-5 text-white" />
             </motion.div>
-            <span className="text-base font-bold bg-gradient-to-r from-ocean-primary to-ocean-secondary bg-clip-text text-transparent">
-              Admin
+            <span className="text-base text-center font-bold bg-gradient-to-r from-cyan-500 to-cyan-500 bg-clip-text text-transparent">
+              Admin Dashboard
             </span>
           </div>
 

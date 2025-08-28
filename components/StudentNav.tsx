@@ -121,8 +121,8 @@ export default function StudentNav() {
             >
               <GraduationCap className="w-5 h-5 text-white" />
             </motion.div>
-            <span className="text-base font-bold bg-gradient-to-r from-ocean-primary to-ocean-secondary bg-clip-text text-transparent">
-              Student
+            <span className="text-base text-center font-bold bg-gradient-to-r from-cyan-500 to-cyan-500 bg-clip-text text-transparent">
+              Student Dashboard
             </span>
           </div>
 
@@ -141,6 +141,7 @@ export default function StudentNav() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
+           
             className="mt-2 bg-white/95 backdrop-blur-md rounded-lg shadow-lg border border-ocean-primary/10 overflow-hidden"
           >
             <div className="p-2 space-y-1">
@@ -152,6 +153,7 @@ export default function StudentNav() {
                     key={item.href}
                     whileHover={{ x: 4 }}
                     whileTap={{ scale: 0.98 }}
+                    
                   >
                     <Link
                       href={item.href}

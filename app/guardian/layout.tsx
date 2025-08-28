@@ -13,12 +13,10 @@ export default function GuardianLayout({ children }: { children: ReactNode }) {
     <ProtectedRoute allow={['guardian']}>
       <div className="min-h-screen flex flex-col">
         <header className="border-b p-4">
-          <div className="max-w-6xl mx-auto">
-            <GuardianNav />
-          </div>
+          <GuardianNav />
         </header>
 
-        <main className="flex-1 p-6 max-w-6xl mx-auto">
+        <main className="flex-1 p-6">
           {children}
         </main>
       </div>

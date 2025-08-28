@@ -121,8 +121,8 @@ export default function TutorNav() {
             >
               <BookOpen className="w-5 h-5 text-white" />
             </motion.div>
-            <span className="text-base font-bold bg-gradient-to-r from-ocean-primary to-ocean-secondary bg-clip-text text-transparent">
-              Tutor
+            <span className="text-base font-bold bg-gradient-to-r from-cyan-500 to-cyan-500 bg-clip-text text-transparent">
+              Tutor Dashboard
             </span>
           </div>
 

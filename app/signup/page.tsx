@@ -5,7 +5,7 @@ import { supabase } from '@/lib/supabaseClient'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Mail, Lock, Loader2, UserPlus, ArrowLeft, Waves, Sparkles, Github, Zap } from "lucide-react"
+import { Mail, Lock, Loader2, UserPlus, ArrowLeft, Waves, Sparkles, Github, Zap, Eye, EyeOff } from "lucide-react"
 
 export default function SignUpPage() {
   const router = useRouter()
@@ -13,6 +13,7 @@ export default function SignUpPage() {
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -155,13 +156,21 @@ export default function SignUpPage() {
                   <Lock className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
                   <input
                     id="password"
-                    type="password"
+                    type={showPassword ? 'text' : 'password'}
                     placeholder="Create a password"
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                     required
                     className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-ocean-primary focus:border-ocean-primary transition-all duration-200 bg-white/80 backdrop-blur-sm"
                   />
+                  <button
+                    type="button"
+                    aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    onClick={() => setShowPassword(v => !v)}
+                    className="absolute right-3 top-2.5 text-gray-500 hover:text-gray-700"
+                  >
+                    {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  </button>
                 </div>
               </div>
 

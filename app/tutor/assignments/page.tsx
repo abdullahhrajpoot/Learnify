@@ -281,13 +281,14 @@ export default function TutorAssignmentsPage() {
   }
 
   return (
-    <div className="p-6">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-semibold">My Assignments</h1>
-        <Link href="/tutor/assignments/new">
-          <Button>Create Assignment</Button>
-        </Link>
-      </div>
+    <div className="min-h-screen ocean-gradient-light">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
+          <h1 className="text-3xl font-semibold">My Assignments</h1>
+          <Link href="/tutor/assignments/new">
+            <Button>Create Assignment</Button>
+          </Link>
+        </div>
 
       {loading && (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -305,20 +306,20 @@ export default function TutorAssignmentsPage() {
       )}
 
       {error && <div className="text-red-600">{error}</div>}
-      {!loading && assignments.length === 0 && <div>No assignments yet.</div>}
+      {!loading && assignments.length === 0 && <div className="text-gray-600">No assignments yet.</div>}
 
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {assignments.map((a) => (
           <motion.div key={a.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
             <Card className="hover:shadow-md transition">
               <CardHeader>
                 <CardTitle className="flex justify-between items-center">
-                  {a.title}
+                  <span className="break-words pr-2">{a.title}</span>
                   <Badge variant="secondary">{a.profiles?.full_name ?? a.student_id}</Badge>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
-                <p className="text-sm text-gray-600">{a.description}</p>
+                <p className="text-sm text-gray-600 break-words">{a.description}</p>
                 <p className="text-xs text-gray-500">
                   Created: {new Date(a.created_at).toLocaleString()}
                 </p>
@@ -349,6 +350,7 @@ export default function TutorAssignmentsPage() {
             </Card>
           </motion.div>
         ))}
+      </div>
       </div>
     </div>
   )
