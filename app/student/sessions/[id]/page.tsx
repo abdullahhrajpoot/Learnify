@@ -144,7 +144,7 @@ export default function StudentSessionDetailPage() {
     }
 
     fetchSession()
-  }, [id])
+  }, [id, router])
 
   if (loading) {
     return (

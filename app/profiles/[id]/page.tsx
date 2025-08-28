@@ -3,13 +3,13 @@ import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
-export default async function ProfilePage({ params }: { params: { id: string } }) {
+export default async function ProfilePage({ params }: { params: Promise<{ id: string }> }) {
   const supabase = createServerComponentClient({ cookies })
   const { data: { session } } = await supabase.auth.getSession()
 
   if (!session) redirect('/login')
 
-  const profileId = params.id
+  const { id: profileId } = await params
   // server-side auth: only admin or owner can view
   const { data: me } = await supabase.from('profiles').select('role').eq('id', session.user.id).single()
   if (!me) redirect('/')

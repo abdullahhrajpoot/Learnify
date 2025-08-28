@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Learnify - Your Educational Platform",
+  title: "🎓 Learnify - Your Educational Platform",
   description: "A comprehensive platform for students, tutors, guardians, and admins to enhance learning experiences.",
   keywords: ["education", "tutoring", "learning", "students", "tutors"],
   authors: [{ name: "Learnify Team" }],
