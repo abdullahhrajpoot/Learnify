@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+📚 Learnify – Full-Stack SaaS Learning Platform
 
-## Getting Started
+Learnify is a full-stack SaaS platform built to streamline learning management across students, tutors, guardians, and admins.
+The platform integrates role-based dashboards, real-time data with Supabase, and an AI-powered tutor to enhance personalized learning.
 
-First, run the development server:
+🚀 Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Framework: Next.js
+ (App Router)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Database & Auth: Supabase
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Styling: TailwindCSS + Shadcn UI
+ + Lucide React Icons
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Animations: Framer Motion
 
-## Learn More
+AI Integration: DeepSeek R1 model (AI Tutor feature)
 
-To learn more about Next.js, take a look at the following resources:
+🎭 Roles & Dashboards
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Learnify supports four distinct roles, each with dedicated dashboards and workflows:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🛠️ Admin
 
-## Deploy on Vercel
+Add, edit, and remove users (students, tutors, guardians) and subjects.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Assign tutors to students, and guardians to students (auto-synced).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Manage expenses for students.
+
+Create and monitor sessions between students and tutors.
+
+Centralized Admin Dashboard with statistics and overviews.
+
+👨‍🏫 Tutor
+
+Students Page – view all assigned students (via admin).
+
+Sessions Page – view sessions created by admin & create new ones with assigned students.
+
+Assignments Page – create assignments (with file uploads), dynamically edit/view via /assignments/[id].
+
+Expenses Page – create student expenses.
+
+Tutor Dashboard – overview of all key data and stats.
+
+👨‍👩‍👧 Guardian
+
+Students Page – view linked students assigned by the admin.
+
+Payments Page – pay expenses created by tutors/admin.
+
+Credits System – buy credits & use them to pay for expenses.
+
+Student Profiles – view details of assigned students.
+
+Guardian Dashboard – personalized overview with stats.
+
+🎓 Student
+
+Assignments Page – view/download assignments uploaded by tutor, mark as complete, check deadlines.
+
+Sessions Page – view both tutor-created & admin-created sessions.
+
+Profile Section – manage personal details (including dynamic profile edit).
+
+🚨 AI Tutor (DeepSeek R1 API) – ask unlimited questions, get instant AI-driven help, practice concepts, and enhance self-learning.
+
+Student Dashboard – welcoming view with learning stats and progress.
+
+🔄 App Flow
+
+Landing Page – introduction to Learnify.
+
+Sign Up – create an account.
+
+Role Selection – choose Student, Tutor, Guardian, or Admin.
+
+Profile Setup – complete user profile.
+
+Dashboard Access – redirected to respective role’s dashboard with full features.
+
+🌟 Highlight Feature: AI Tutor
+
+The AI Tutor is Learnify’s standout feature.
+It allows students to:
+
+Ask unlimited questions.
+
+Get personalized, conversational answers.
+
+Practice concepts interactively.
+
+Learn beyond static assignments and sessions.
+
+This is powered by the DeepSeek R1 model, making Learnify not just an LMS, but an intelligent learning companion.
+
+📊 Why Learnify?
+
+✅ Centralized role-based dashboards.
+
+✅ Real-time data management with Supabase.
+
+✅ AI-powered tutoring for personalized learning.
+
+✅ Smooth UX with animations & modern UI components.
+
+✅ Scalable SaaS-ready architecture.
