@@ -1,185 +1,3 @@
-// // app/tutor/expenses/page.tsx
-// 'use client'
-
-// import React, { useEffect, useState } from 'react'
-// import Link from 'next/link'
-// import { supabase } from '@/lib/supabaseClient'
-
-// export default function TutorExpensesPage() {
-//   const [expenses, setExpenses] = useState<any[]>([])
-//   const [loading, setLoading] = useState(true)
-//   const [error, setError] = useState<string | null>(null)
-
-//   useEffect(() => {
-//     let mounted = true
-//     async function load() {
-//       setLoading(true)
-//       setError(null)
-//       try {
-//         const {
-//           data: { user },
-//           error: userErr
-//         } = await supabase.auth.getUser()
-//         if (userErr) throw userErr
-//         if (!user) {
-//           setExpenses([])
-//           setLoading(false)
-//           return
-//         }
-
-//         const { data, error } = await supabase
-//           .from('expenses')
-//           .select('*')
-//           .eq('created_by', user.id)
-//           .order('created_at', { ascending: false })
-
-//         if (error) throw error
-//         if (mounted) setExpenses(data ?? [])
-//       } catch (err: any) {
-//         setError(err.message || 'Failed to load expenses')
-//       } finally {
-//         setLoading(false)
-//       }
-//     }
-
-//     load()
-//     return () => { mounted = false }
-//   }, [])
-
-//   return (
-//     <div className="p-6">
-//       <div className="flex justify-between items-center mb-4">
-//         <h1 className="text-2xl font-semibold">My Expenses</h1>
-//         <Link href="/tutor/expenses/new" className="px-3 py-2 bg-slate-800 text-white rounded">Add Expense</Link>
-//       </div>
-
-//       {loading && <div>Loading expenses...</div>}
-//       {error && <div className="text-red-600">{error}</div>}
-
-//       {!loading && expenses.length === 0 && <div>No expenses yet.</div>}
-
-//       <div className="space-y-3">
-//         {expenses.map((e) => (
-//           <div key={e.id} className="p-3 border rounded">
-//             <div className="flex justify-between">
-//               <div>
-//                 <div className="font-medium">Student: {e.student_id}</div>
-//                 <div className="text-sm text-gray-600">{e.amount} {e.currency}</div>
-//                 <div className="text-sm text-gray-600">Desc: {e.description}</div>
-//               </div>
-//               <div className="flex flex-col gap-2">
-//                 <Link href={`/tutor/expenses/${e.id}/edit`} className="px-2 py-1 border rounded">Edit</Link>
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   )
-// }
-
-
-
-// 'use client'
-
-// import React, { useEffect, useState } from 'react'
-// import Link from 'next/link'
-// import { supabase } from '@/lib/supabaseClient'
-// import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-// import { Button } from "@/components/ui/button"
-// import { Skeleton } from "@/components/ui/skeleton"
-// import { Badge } from "@/components/ui/badge"
-
-// export default function TutorExpensesPage() {
-//   const [expenses, setExpenses] = useState<any[]>([])
-//   const [loading, setLoading] = useState(true)
-//   const [error, setError] = useState<string | null>(null)
-
-//   useEffect(() => {
-//     let mounted = true
-//     async function load() {
-//       setLoading(true)
-//       setError(null)
-//       try {
-//         const {
-//           data: { user },
-//           error: userErr
-//         } = await supabase.auth.getUser()
-//         if (userErr) throw userErr
-//         if (!user) {
-//           setExpenses([])
-//           setLoading(false)
-//           return
-//         }
-
-//         const { data, error } = await supabase
-//           .from('expenses')
-//           .select('*')
-//           .eq('created_by', user.id)
-//           .order('created_at', { ascending: false })
-
-//         if (error) throw error
-//         if (mounted) setExpenses(data ?? [])
-//       } catch (err: any) {
-//         setError(err.message || 'Failed to load expenses')
-//       } finally {
-//         setLoading(false)
-//       }
-//     }
-
-//     load()
-//     return () => { mounted = false }
-//   }, [])
-
-//   return (
-//     <div className="p-6">
-//       <div className="flex justify-between items-center mb-6">
-//         <h1 className="text-2xl font-bold">💰 My Expenses</h1>
-//         <Link href="/tutor/expenses/new">
-//           <Button>Add Expense</Button>
-//         </Link>
-//       </div>
-
-//       {loading && (
-//         <div className="space-y-3">
-//           <Skeleton className="h-20 w-full rounded-xl" />
-//           <Skeleton className="h-20 w-full rounded-xl" />
-//         </div>
-//       )}
-
-//       {error && <div className="text-red-600">{error}</div>}
-
-//       {!loading && expenses.length === 0 && (
-//         <Card className="p-6 text-center text-gray-500">
-//           No expenses yet. Add your first one!
-//         </Card>
-//       )}
-
-//       <div className="grid gap-4">
-//         {expenses.map((e) => (
-//           <Card key={e.id} className="hover:shadow-lg transition">
-//             <CardHeader>
-//               <CardTitle className="flex justify-between items-center">
-//                 <span>Student: {e.student_id}</span>
-//                 <Badge variant="secondary">{e.currency} {e.amount}</Badge>
-//               </CardTitle>
-//             </CardHeader>
-//             <CardContent className="flex justify-between items-center">
-//               <p className="text-sm text-gray-600">{e.description || "No description"}</p>
-//               <Link href={`/tutor/expenses/${e.id}/edit`}>
-//                 <Button variant="outline" size="sm">Edit</Button>
-//               </Link>
-//             </CardContent>
-//           </Card>
-//         ))}
-//       </div>
-//     </div>
-//   )
-// }
-
-
-
-// app/tutor/expenses/page.tsx
 'use client'
 
 import React, { useEffect, useState } from 'react'
@@ -195,6 +13,7 @@ export default function TutorExpensesPage() {
   const [expenses, setExpenses] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [statusFilter, setStatusFilter] = useState<'all' | 'paid' | 'unpaid'>('all')
 
   useEffect(() => {
     let mounted = true
@@ -278,6 +97,13 @@ export default function TutorExpensesPage() {
 
   const totalExpenses = expenses.reduce((sum, e) => sum + (e.amount || 0), 0)
   const averageExpense = expenses.length > 0 ? totalExpenses / expenses.length : 0
+  const paidCount = expenses.filter(e => !!e.paid).length
+  const unpaidCount = expenses.filter(e => !e.paid).length
+  const filteredExpenses = expenses.filter(e => {
+    if (statusFilter === 'paid') return !!e.paid
+    if (statusFilter === 'unpaid') return !e.paid
+    return true
+  })
 
   return (
     <div className="min-h-screen ocean-gradient-light">
@@ -368,14 +194,40 @@ export default function TutorExpensesPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="p-6">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button asChild className="ocean-gradient text-white shadow-lg">
-                  <Link href="/tutor/expenses/new">
-                    <Plus className="w-4 h-4 mr-2" />
-                    Add New Expense
-                  </Link>
-                </Button>
-              </motion.div>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button asChild className="ocean-gradient text-white shadow-lg">
+                    <Link href="/tutor/expenses/new">
+                      <Plus className="w-4 h-4 mr-2" />
+                      Add New Expense
+                    </Link>
+                  </Button>
+                </motion.div>
+
+                <div className="flex items-center gap-2">
+                  <Button
+                    variant={statusFilter === 'all' ? 'default' : 'outline'}
+                    className={`${statusFilter === 'all' ? 'ocean-gradient text-white' : 'bg-white/80 backdrop-blur-sm border-ocean-primary/20 text-ocean-primary hover:bg-ocean-primary/5'} rounded-xl`}
+                    onClick={() => setStatusFilter('all')}
+                  >
+                    All ({expenses.length})
+                  </Button>
+                  <Button
+                    variant={statusFilter === 'paid' ? 'default' : 'outline'}
+                    className={`${statusFilter === 'paid' ? 'ocean-gradient text-white' : 'bg-white/80 backdrop-blur-sm border-ocean-primary/20 text-ocean-primary hover:bg-ocean-primary/5'} rounded-xl`}
+                    onClick={() => setStatusFilter('paid')}
+                  >
+                    Paid ({paidCount})
+                  </Button>
+                  <Button
+                    variant={statusFilter === 'unpaid' ? 'default' : 'outline'}
+                    className={`${statusFilter === 'unpaid' ? 'ocean-gradient text-white' : 'bg-white/80 backdrop-blur-sm border-ocean-primary/20 text-ocean-primary hover:bg-ocean-primary/5'} rounded-xl`}
+                    onClick={() => setStatusFilter('unpaid')}
+                  >
+                    Unpaid ({unpaidCount})
+                  </Button>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </motion.div>
@@ -409,17 +261,17 @@ export default function TutorExpensesPage() {
                 </div>
               </CardContent>
             </Card>
-          ) : expenses.length === 0 ? (
+          ) : filteredExpenses.length === 0 ? (
             <Card className="ocean-gradient-card shadow-lg border-0">
               <CardContent className="p-12 text-center">
                 <DollarSign className="w-16 h-16 text-ocean-secondary/40 mx-auto mb-4" />
-                <p className="text-ocean-secondary/60 text-lg">No expenses recorded</p>
-                <p className="text-ocean-secondary/40 text-sm">Add your first expense to get started</p>
+                <p className="text-ocean-secondary/60 text-lg">No {statusFilter !== 'all' ? statusFilter : ''} expenses</p>
+                <p className="text-ocean-secondary/40 text-sm">Try changing the filter or add a new expense</p>
               </CardContent>
             </Card>
           ) : (
             <div className="grid gap-6">
-              {expenses.map((e, index) => (
+              {filteredExpenses.map((e, index) => (
                 <motion.div
                   key={e.id}
                   variants={itemVariants}
@@ -444,6 +296,13 @@ export default function TutorExpensesPage() {
                               <div className="flex items-center gap-1">
                                 <Calendar className="w-3 h-3" />
                                 {e.created_at ? new Date(e.created_at).toLocaleDateString() : '—'}
+                              </div>
+                              <div className="flex items-center gap-1">
+                                {e.paid ? (
+                                  <Badge className="bg-green-500/15 text-green-700 border-green-500/20">Paid</Badge>
+                                ) : (
+                                  <Badge className="bg-red-500/15 text-red-700 border-red-500/20">Unpaid</Badge>
+                                )}
                               </div>
                             </div>
                           </div>

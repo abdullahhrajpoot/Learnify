@@ -216,10 +216,10 @@ export default function LoginPage() {
                 </Link>
               </div>
               
-              <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
+              {/* <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
                 <Sparkles className="w-3 h-3" />
                 <span>Experience the new Ocean Breeze interface</span>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </motion.div>

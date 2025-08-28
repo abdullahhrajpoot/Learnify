@@ -86,7 +86,7 @@ export default function HomePage() {
             <div className="flex items-center gap-3 ml-6">
               <Link
                 href="/login"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg text-ocean-primary border border-ocean-primary hover:bg-ocean-primary hover:text-white transition-all duration-200 shadow-sm hover:shadow-md"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg text-ocean-primary border border-ocean-primary hover:bg-ocean-primary hover:text-blue transition-all duration-200 shadow-sm hover:shadow-md"
               >
                 <LogIn className="w-4 h-4" /> 
                 <span>Sign In</span>
@@ -224,7 +224,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/about"
-              className="group flex items-center gap-2 px-8 py-4 border-2 border-ocean-primary text-ocean-primary rounded-xl hover:bg-ocean-primary hover:text-white transition-all duration-300 transform hover:scale-105"
+              className="group flex items-center gap-2 px-8 py-4 border-2 border-ocean-primary text-ocean-primary rounded-xl hover:bg-cyan-500 hover:text-white transition-all duration-300 transform hover:scale-105"
             >
               <span className="font-semibold">Learn More</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

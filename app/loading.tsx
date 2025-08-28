@@ -67,7 +67,7 @@ export default function LoadingPage() {
               </motion.div>
               <motion.div 
                 animate="pulse"
-                variants={pulseVariants}
+                // variants={pulseVariants}
                 className="p-2 bg-ocean-accent/10 rounded-lg"
               >
                 <Sparkles className="w-6 h-6 text-ocean-accent" />
