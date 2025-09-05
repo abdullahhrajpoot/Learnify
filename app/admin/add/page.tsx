@@ -15,7 +15,7 @@ export default function AdminAddPage() {
     const qp = new URLSearchParams(window.location.search).get('tab')
     if (['tutors','students','guardians'].includes(qp || '')) setTab(qp as any)
   }, [])
-
+    console.log("hello");
   const tabs = [
     { id: 'subjects', label: 'Subjects', icon: <BookOpen className="w-4 h-4" /> },
     { id: 'tutors', label: 'Tutors', icon: <GraduationCap className="w-4 h-4" /> },
